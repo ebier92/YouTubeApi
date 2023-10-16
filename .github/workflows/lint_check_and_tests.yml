@@ -1,0 +1,50 @@
+# -- Run lint check and unit tests -- #
+# Runs routine lint checks for syntax and formatting as well as unit tests across multiple
+# operating systems. By default, the job runs on pushes to main and development or on any
+# pull requests into development.
+# ------------------ #
+# Jobs:
+#
+# lint: Checks out code and runs C# linting.
+#
+# tests: Parallel job to run unit tests. Checks out code, installs .NET, and runs unit tests.
+
+name: Run lint check and unit tests
+
+on:
+    push:
+      branches:
+        ["main", "development"]
+    pull_request:
+      branches:
+        ["development"]
+    schedule:
+      - cron: "0 0 * * *"
+
+jobs:
+    lint:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Run lint
+          uses: github/super-linter@v4
+          env:
+            VALIDATE_CSHARP: true
+    tests:
+        name: Test (${{ matrix.os }})
+        runs-on: ${{ matrix.os }}
+        permissions:
+            contents: read
+        strategy:
+            fail-fast: false
+            max-parallel: 3
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Install .NET
+              uses: actions/setup-dotnet@v3
+            - name: Run tests
+              run: dotnet test
