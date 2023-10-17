@@ -1,0 +1,35 @@
+{
+    "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
+    "categories": [
+        {
+            "title": "## Features",
+            "labels": [
+                "enhancement"
+            ]
+        },
+        {
+            "title": "## Bug Fixes",
+            "labels": [
+                "bug"
+            ]
+        },
+        {
+            "title": "## Documentation",
+            "labels": [
+                "documentation"
+            ]
+        },
+        {
+            "title": "## Tests",
+            "labels": [
+                "tests"
+            ]
+        },
+        {
+            "title": "## Dependencies",
+            "labels": [
+                "dependencies"
+            ]
+        }
+    ]
+}
