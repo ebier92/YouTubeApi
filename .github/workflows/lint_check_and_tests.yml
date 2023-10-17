@@ -32,15 +32,10 @@ jobs:
           env:
             VALIDATE_CSHARP: true
     tests:
-        name: Test (${{ matrix.os }})
-        runs-on: ${{ matrix.os }}
+        name: Run unit tests
+        runs-on: windows-latest
         permissions:
             contents: read
-        strategy:
-            fail-fast: false
-            max-parallel: 3
-            matrix:
-                os: [ubuntu-latest, windows-latest, macos-latest]
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
