@@ -1,4 +1,4 @@
-﻿using YouTubeAPi;
+﻿using YouTubeApi;
 
 Console.WriteLine("Enter a search query:");
 var query = Console.ReadLine();

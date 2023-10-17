@@ -1,4 +1,4 @@
-﻿namespace YouTubeAPi;
+﻿namespace YouTubeApi;
 
 /// <summary>
 /// Class to search for and retrieve playlist and video data from YouTube using the web client API.
