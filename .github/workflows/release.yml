@@ -57,8 +57,7 @@ jobs:
           uses: actions/setup-dotnet@v3
         - name: Build package
           run: |
-            dotnet pack
-            --configuration Release
+            dotnet pack --configuration Release
         - name: Upload artifacts
           uses: actions/upload-artifact@v3
           with:
