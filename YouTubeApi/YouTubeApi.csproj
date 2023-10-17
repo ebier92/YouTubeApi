@@ -8,7 +8,7 @@
     <Description>YouTubeApi is a lightweight music-focused client interface for the internal API's of YouTube and YouTube Music.</Description>
     <PackageTags>youtube music video playlist api</PackageTags>
     <PackageReadMeFile>README.md</PackageReadMeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/ebier92/YouTubeApi</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/ebier92/YouTubeApi/releases</PackageReleaseNotes>
     <TargetFramework>net7.0</TargetFramework>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE" Pack="true" PackagePath="\"/>
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
