@@ -19,7 +19,7 @@ dotnet add package YouTubeApi
 All package functionality is exposed through the static `YouTube` class.
 
 ```cs
-using YouTubeAPi;
+using YouTubeApi;
 
 var results = await YouTube.SearchYouTube(query);
 ```
