@@ -66,21 +66,23 @@ var playlistUrl = "https://www.youtube.com/playlist?list=PL7P2TR060DnTGVmYkylwAS
 var playlistId = YouTube.GetPlaylistId(playlistUrl);
 
 // Returns a PaginatedResults class with the first page of content pre-fetched
-var results = await YouTube.GetPlaylistVideos(playlistId);
+var pages = await YouTube.GetPlaylistVideos(playlistId);
 
 // Returns the last fetched page
-var firstPage = results.CurrentPage;
+var firstPage = pages.CurrentPage;
 
 // Fetch next page
-var nextPage = await results.GetNextPage();
+var nextPage = await pages.GetNextPage();
 // Fetch specific page by number, will return a cached page if the page number has already been fetched
-var thirdPage = await results.GetPage(3);
+var thirdPage = await pages.GetPage(3);
 
 
 // Fetch pages until complete
-while (!results.AllPagesFetched)
+while (!pages.AllPagesFetched)
 {
-    foreach (var contentItem in results.CurrentPage.ContentItems)
+    await pages.GetNextPage();
+
+    foreach (var contentItem in pages.CurrentPage.ContentItems)
     {
         // Do something with page content
     }
@@ -128,7 +130,7 @@ var pages = await YouTube.GetPlaylistVideos(playlistId);
 // Get all pages of playlist content
 while (!pages.AllPagesFetched)
 {
-    pages.GetNextPage();
+    await pages.GetNextPage();
 }
 ```
 
