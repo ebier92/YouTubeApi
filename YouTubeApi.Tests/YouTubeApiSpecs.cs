@@ -173,7 +173,9 @@ public class YouTubeApiSpecs
     [DataRow(
         "https://www.youtube.com/watch?v=BMMGwtklEeE&list=RDCLAK5uy_l3PeyHeqJh1dR78WjfsMJwRHJx9ofMvvc&start_radio=1"
     )]
-    [DataRow("https://www.youtube.com/watch?v=CqnU_sJ8V-E&list=PLw0ht2-AVRxXrr5SaVjkMZf99NmyIL5HE")]
+    [DataRow(
+        "https://www.youtube.com/watch?v=nN120kCiVyQ&list=RDCLAK5uy_nZiG9ehz_MQoWQxY5yElsLHCcG0tv9PRg"
+    )]
     public async Task GetPlaylistVideos_PlaylistUrlsAsInput_RetrievesAllPagesOfPlaylistVideos(
         string url
     )
