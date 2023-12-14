@@ -472,7 +472,12 @@ public static partial class YouTube
                 return null;
             }
 
-            if (playlistId != null && title != null && description != null && thumbnails != null)
+            if (
+                playlistId != null
+                && title != null
+                && description != null
+                && thumbnails.StandardResUrl != null
+            )
                 return new Playlist(
                     playlistId,
                     title,
@@ -530,7 +535,7 @@ public static partial class YouTube
                 && author != null
                 && description != null
                 && videoCount > 0
-                && thumbnails != null
+                && thumbnails?.StandardResUrl != null
             )
                 return new Playlist(playlistId, title, author, description, videoCount, thumbnails);
             else
@@ -580,7 +585,7 @@ public static partial class YouTube
                 && title != null
                 && author != null
                 && videoCount > 0
-                && thumbnails != null
+                && thumbnails.StandardResUrl != null
             )
                 return new Playlist(
                     playlistId,
@@ -659,6 +664,8 @@ public static partial class YouTube
 
                 if (thumbnailItems?.Count() >= 4)
                     thumbnails.StandardResUrl = (string?)thumbnailItems[3]?["url"];
+                else if (thumbnails.MediumResUrl != null)
+                    thumbnails.StandardResUrl = thumbnails.MediumResUrl;
 
                 // Check if the text run element contains video count information
                 if (textRun != null && Regex.IsMatch(textRun, @"^\d+ song[s]*"))
@@ -678,7 +685,12 @@ public static partial class YouTube
                 return null;
             }
 
-            if (playlistId != null && title != null && author != null && thumbnails != null)
+            if (
+                playlistId != null
+                && title != null
+                && author != null
+                && thumbnails.StandardResUrl != null
+            )
                 return new Playlist(
                     playlistId,
                     title,
