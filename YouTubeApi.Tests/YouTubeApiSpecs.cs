@@ -1,6 +1,5 @@
 namespace YouTubeApi.Tests;
 
-using System.Buffers;
 using YouTubeApi;
 
 [TestClass]
