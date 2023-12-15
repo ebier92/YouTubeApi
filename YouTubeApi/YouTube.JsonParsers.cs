@@ -439,14 +439,27 @@ public static partial class YouTube
             try
             {
                 playlistId = (string?)
-                    compactStationRenderer?["navigationEndpoint"]?["watchEndpoint"]?["playlistId"];
+                    compactStationRenderer
+                        ?["navigationEndpoint"]
+                        ?["watchPlaylistEndpoint"]
+                        ?["playlistId"];
                 title = (string?)compactStationRenderer?["title"]?["simpleText"];
                 var thumbnailVideoId = (string?)
-                    compactStationRenderer?["navigationEndpoint"]?["watchEndpoint"]?["videoId"];
-                thumbnails =
-                    thumbnailVideoId != null
-                        ? new Thumbnails() { VideoId = thumbnailVideoId, }
-                        : null;
+                    compactStationRenderer
+                        ?["navigationEndpoint"]
+                        ?["watchPlaylistEndpoint"]
+                        ?["videoId"];
+                thumbnails = new Thumbnails()
+                {
+                    LowResUrl = (string?)
+                        compactStationRenderer?["thumbnail"]?["thumbnails"]?[0]?["url"],
+                    MediumResUrl = (string?)
+                        compactStationRenderer?["thumbnail"]?["thumbnails"]?[1]?["url"],
+                    HighResUrl = (string?)
+                        compactStationRenderer?["thumbnail"]?["thumbnails"]?[2]?["url"],
+                    StandardResUrl = (string?)
+                        compactStationRenderer?["thumbnail"]?["thumbnails"]?[1]?["url"]
+                };
                 description = (string?)compactStationRenderer?["description"]?["simpleText"];
                 videoCount = int.Parse(
                     (string?)
@@ -459,7 +472,12 @@ public static partial class YouTube
                 return null;
             }
 
-            if (playlistId != null && title != null && description != null && thumbnails != null)
+            if (
+                playlistId != null
+                && title != null
+                && description != null
+                && thumbnails.StandardResUrl != null
+            )
                 return new Playlist(
                     playlistId,
                     title,
@@ -517,7 +535,7 @@ public static partial class YouTube
                 && author != null
                 && description != null
                 && videoCount > 0
-                && thumbnails != null
+                && thumbnails?.StandardResUrl != null
             )
                 return new Playlist(playlistId, title, author, description, videoCount, thumbnails);
             else
@@ -567,7 +585,7 @@ public static partial class YouTube
                 && title != null
                 && author != null
                 && videoCount > 0
-                && thumbnails != null
+                && thumbnails.StandardResUrl != null
             )
                 return new Playlist(
                     playlistId,
@@ -646,6 +664,8 @@ public static partial class YouTube
 
                 if (thumbnailItems?.Count() >= 4)
                     thumbnails.StandardResUrl = (string?)thumbnailItems[3]?["url"];
+                else if (thumbnails.MediumResUrl != null)
+                    thumbnails.StandardResUrl = thumbnails.MediumResUrl;
 
                 // Check if the text run element contains video count information
                 if (textRun != null && Regex.IsMatch(textRun, @"^\d+ song[s]*"))
@@ -665,7 +685,12 @@ public static partial class YouTube
                 return null;
             }
 
-            if (playlistId != null && title != null && author != null && thumbnails != null)
+            if (
+                playlistId != null
+                && title != null
+                && author != null
+                && thumbnails.StandardResUrl != null
+            )
                 return new Playlist(
                     playlistId,
                     title,

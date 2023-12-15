@@ -1,6 +1,8 @@
 # Introduction
 
-`YouTubeApi` is a music-focused client interface for the internal API's of YouTube and YouTube Music. Some of it's functionality includes:
+`YouTubeApi` is a music-focused client interface for the internal API's of YouTube and YouTube Music. Through reverse engineering, the client is able to work without the use of official YouTube API keys. This allows the client to bypass normal restrictions and usage quotas that are enforced by the official API. 
+
+Some of it's functionality includes:
 
 - Performing searches
 - Getting raw audio or video stream URL's

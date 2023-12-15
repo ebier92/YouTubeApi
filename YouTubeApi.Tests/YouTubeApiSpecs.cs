@@ -1,6 +1,5 @@
 namespace YouTubeApi.Tests;
 
-using System.Buffers;
 using YouTubeApi;
 
 [TestClass]
@@ -141,9 +140,9 @@ public class YouTubeApiSpecs
     }
 
     [DataTestMethod]
-    [DataRow("https://www.youtube.com/watch?v=mQER0A0ej0M")]
-    [DataRow("https://www.youtube.com/watch?v=q-JJf7S0osI&pp=ygUKcm9jayBtdXNpYw%3D%3D")]
-    [DataRow("https://www.youtube.com/watch?v=S-OgkNgxm3k&pp=ygUKcm9jayBtdXNpYw%3D%3D")]
+    [DataRow("https://www.youtube.com/watch?v=zOILAZHf2pE")]
+    [DataRow("https://www.youtube.com/watch?v=YChioDnHxm4")]
+    [DataRow("https://www.youtube.com/watch?v=QdBZY2fkU-0")]
     public async Task GetRelatedVideos_VideoUrlsInput_Retrieves_MultiplePagesOfRelatedVideos(
         string url
     )
