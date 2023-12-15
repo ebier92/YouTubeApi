@@ -4,7 +4,7 @@
     <PackageId>YouTubeApi</PackageId>
     <Authors>Erik Bierbrauer</Authors>
     <Copyright>Copyright (C) Erik Bierbrauer</Copyright>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Description>YouTubeApi is a lightweight music-focused client interface for the internal API's of YouTube and YouTube Music.</Description>
     <PackageTags>youtube music video playlist api</PackageTags>
     <PackageReadMeFile>README.md</PackageReadMeFile>
