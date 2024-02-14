@@ -40,6 +40,6 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
             - name: Install .NET
-              uses: actions/setup-dotnet@v3
+              uses: actions/setup-dotnet@v4
             - name: Run tests
               run: dotnet test
