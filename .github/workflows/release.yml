@@ -54,7 +54,7 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
         - name: Install .NET
-          uses: actions/setup-dotnet@v3
+          uses: actions/setup-dotnet@v4
         - name: Build package
           run: |
             dotnet pack --configuration Release
@@ -70,7 +70,7 @@ jobs:
         actions: read
       steps:
         - name: Install .NET
-          uses: actions/setup-dotnet@v3
+          uses: actions/setup-dotnet@v4
         - name: Download artifacts
           uses: actions/download-artifact@v3
           with:

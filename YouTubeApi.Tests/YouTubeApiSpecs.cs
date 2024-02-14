@@ -63,7 +63,7 @@ public class YouTubeApiSpecs
 
     [DataTestMethod]
     [DataRow("https://www.youtube.com/watch?v=mQER0A0ej0M")]
-    [DataRow("https://www.youtube.com/watch?v=q-JJf7S0osI&pp=ygUKcm9jayBtdXNpYw%3D%3D")]
+    [DataRow("https://www.youtube.com/watch?v=pcAKbKUBUOQ&list=PLI1gW6hB0ahz9iGkYKld6Mtfa-VD1Pqun")]
     [DataRow("https://www.youtube.com/watch?v=S-OgkNgxm3k&pp=ygUKcm9jayBtdXNpYw%3D%3D")]
     public async Task GetStreamInfo_VideoUrlsInput_RetrievesStreamInfo(string url)
     {
