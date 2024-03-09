@@ -143,7 +143,7 @@ public static partial class YouTube
         private static JObject GetYouTubeStreamInfoContextJson()
         {
             return JObject.Parse(
-                @"{'context':{'client':{'clientName':'ANDROID','clientVersion':'17.31.35', 'androidSdkVersion': 33}}}"
+                @"{'context':{'client':{'clientName':'ANDROID','clientVersion':'18.11.34', 'androidSdkVersion': 30}}}"
             );
         }
     }
