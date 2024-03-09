@@ -28,6 +28,6 @@ public static partial class YouTube
 
         // Header Data
         public const string UserAgent =
-            "com.google.android.youtube/17.31.35 (Linux; U; Android 11) gzip";
+            "com.google.android.youtube/18.11.34 (Linux; U; Android 11) gzip";
     }
 }
