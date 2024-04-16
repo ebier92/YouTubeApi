@@ -472,12 +472,7 @@ public static partial class YouTube
                 return null;
             }
 
-            if (
-                playlistId != null
-                && title != null
-                && description != null
-                && thumbnails.StandardResUrl != null
-            )
+            if (playlistId != null && title != null && thumbnails.StandardResUrl != null)
                 return new Playlist(
                     playlistId,
                     title,
