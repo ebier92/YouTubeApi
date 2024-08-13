@@ -11,7 +11,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/ebier92/YouTubeApi</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/ebier92/YouTubeApi/releases</PackageReleaseNotes>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
