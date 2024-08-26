@@ -67,15 +67,24 @@ public class YouTubeApiSpecs
     [DataRow("https://www.youtube.com/watch?v=S-OgkNgxm3k&pp=ygUKcm9jayBtdXNpYw%3D%3D")]
     public async Task GetStreamInfo_VideoUrlsInput_RetrievesStreamInfo(string url)
     {
-        var streamInfos = await YouTube.GetStreamInfo(YouTube.GetVideoId(url));
-
-        Assert.IsTrue(streamInfos.Count() > 0);
-
-        foreach (var streamInfo in streamInfos)
+        try
         {
-            Assert.IsTrue(streamInfo.Url.Length > 0);
-            Assert.IsTrue(streamInfo.MimeType.Length > 0);
-            Assert.IsTrue(streamInfo.BitRate > 0);
+            var streamInfos = await YouTube.GetStreamInfo(YouTube.GetVideoId(url));
+            Console.WriteLine(streamInfos);
+
+            Assert.IsTrue(streamInfos.Count() > 0);
+
+            foreach (var streamInfo in streamInfos)
+            {
+                Assert.IsTrue(streamInfo.Url.Length > 0);
+                Assert.IsTrue(streamInfo.MimeType.Length > 0);
+                Assert.IsTrue(streamInfo.BitRate > 0);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
         }
     }
 
