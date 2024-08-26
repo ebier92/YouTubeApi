@@ -121,7 +121,7 @@ public static partial class YouTube
         private static JObject GetYouTubeContextJson()
         {
             return JObject.Parse(
-                @"{'context':{'client':{'clientName':'WEB','clientVersion':'2.20230928.04.00'}}}"
+                @"{'context':{'client':{'clientName':'WEB','clientVersion':'2.20240726.00.00'}}}"
             );
         }
 
@@ -132,7 +132,7 @@ public static partial class YouTube
         private static JObject GetYouTubeMusicContextJson()
         {
             return JObject.Parse(
-                @"{'context':{'client':{'clientName':'WEB_REMIX','clientVersion':'1.20220815.01.00'}}}"
+                @"{'context':{'client':{'clientName':'WEB_REMIX','clientVersion':'1.20240724.00.00'}}}"
             );
         }
 
@@ -143,7 +143,7 @@ public static partial class YouTube
         private static JObject GetYouTubeStreamInfoContextJson()
         {
             return JObject.Parse(
-                @"{'context':{'client':{'clientName':'ANDROID','clientVersion':'18.11.34', 'androidSdkVersion': 30}}}"
+                @"{'context':{'client':{'clientName':'ANDROID','clientVersion':'19.29.37', 'androidSdkVersion': 30}}}"
             );
         }
     }
