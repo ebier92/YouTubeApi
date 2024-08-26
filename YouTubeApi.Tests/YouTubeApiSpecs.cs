@@ -61,6 +61,7 @@ public class YouTubeApiSpecs
         }
     }
 
+    [Ignore] // Ignored due to YouTube blocking these requests when tests run on Github.
     [DataTestMethod]
     [DataRow("https://www.youtube.com/watch?v=mQER0A0ej0M")]
     [DataRow("https://www.youtube.com/watch?v=pcAKbKUBUOQ&list=PLI1gW6hB0ahz9iGkYKld6Mtfa-VD1Pqun")]
